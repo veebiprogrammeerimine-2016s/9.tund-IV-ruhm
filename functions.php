@@ -114,6 +114,7 @@
 		$stmt = $mysqli->prepare("
 			SELECT id, age, color
 			FROM whistle
+			WHERE deleted IS NULL
 		");
 		$stmt->bind_result($id, $age, $color);
 		$stmt->execute();

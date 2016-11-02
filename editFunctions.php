@@ -2,6 +2,8 @@
 
 	require_once("../../config.php");
 	
+	
+	
 	function getSinglePerosonData($edit_id){
     
         $database = "if16_romil";
@@ -10,7 +12,7 @@
 		
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $database);
 		
-		$stmt = $mysqli->prepare("SELECT age, color FROM whistle WHERE id=?");
+		$stmt = $mysqli->prepare("SELECT age, color FROM whistle WHERE id=? AND deleted IS NULL");
 
 		$stmt->bind_param("i", $edit_id);
 		$stmt->bind_result($age, $color);
@@ -49,7 +51,7 @@
 		
 		$mysqli = new mysqli($GLOBALS["serverHost"], $GLOBALS["serverUsername"], $GLOBALS["serverPassword"], $database);
 		
-		$stmt = $mysqli->prepare("UPDATE whistle SET age=?, color=? WHERE id=?");
+		$stmt = $mysqli->prepare("UPDATE whistle SET age=?, color=? WHERE id=? AND deleted IS NULL");
 		$stmt->bind_param("isi",$age, $color, $id);
 		
 		// kas õnnestus salvestada
