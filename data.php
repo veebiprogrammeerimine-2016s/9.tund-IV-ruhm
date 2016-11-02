@@ -86,6 +86,8 @@
 				$html .= "<td>".$p->id."</td>";
 				$html .= "<td>".$p->age."</td>";
 				$html .= "<td>".$p->lightColor."</td>";
+                $html .= "<td><a href='edit.php?id=".$p->id."'>edit.php</a></td>";
+
 			$html .= "</tr>";
 		
 		}
