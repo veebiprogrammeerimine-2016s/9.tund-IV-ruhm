@@ -5,6 +5,8 @@
 	
 	if(isset($_GET["delete"])){
 		deletePerson($_GET["id"]);
+		header("Location: data.php");
+		exit();
 	}
 	
 	
