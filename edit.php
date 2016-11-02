@@ -3,6 +3,10 @@
 	require("functions.php");
 	require("editFunctions.php");
 	
+	if(isset($_GET["delete"])){
+		deletePerson($_GET["id"]);
+	}
+	
 	
 	
 	//kas kasutaja uuendab andmeid
