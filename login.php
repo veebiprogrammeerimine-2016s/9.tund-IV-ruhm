@@ -101,7 +101,7 @@
 		
 		echo $password."<br>";
 		
-		signup($signupEmail, $password);
+		$User->signup($signupEmail, $password);
 		
 		
 	}
@@ -114,7 +114,7 @@
 		 !empty($_POST["loginPassword"]) 
 	) {
 		
-		$notice = login($_POST["loginEmail"], $_POST["loginPassword"]);
+		$notice = $User->login($_POST["loginEmail"], $_POST["loginPassword"]);
 		
 	}
 
